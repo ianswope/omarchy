@@ -400,7 +400,7 @@ function urlFor(query) {
   if (!value || /\s/.test(value)) return ""
   if (/^https?:\/\/[^\s/]+/i.test(value)) return value
 
-  var local = /^(localhost|\d{1,3}(\.\d{1,3}){3})(:\d+)?(\/\S*)?$/i
+  var local = /^(localhost|\d{1,3}(\.\d{1,3}){3})(:\d+)?([/?#]\S*)?$/i
   if (local.test(value)) return "http://" + value
 
   var host = /^([a-z0-9-]+\.)+[a-z]{2,}(:\d+)?([/?#]\S*)?$/i
